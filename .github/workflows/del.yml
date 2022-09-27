@@ -15,4 +15,4 @@ jobs:
           #repository: "srwgin/test"
           repository: ${{ github.repository }}
           keep_minimum_runs: 0
-          retain_days: 1
+          retain_days: 0
