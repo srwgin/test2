@@ -7,14 +7,14 @@ on:
     watch:
         types: [started]
     repository_dispatch:
-        types: jd_fruit_task
+        types: jd_fruit
         
 jobs:
     build:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v1
             - name: Use Node.js 10.x
               uses: actions/setup-node@v1
               with:
@@ -49,5 +49,5 @@ jobs:
                   #SYNCURL: https://github.com/vega0707/MyActions-1/raw/main/jd_fruit.js
                   #SYNCURL: https://github.com/srwgin/backup/raw/main/jd_fruit.js
                   #SYNCURL: https://jdsharedresourcescdn.azureedge.net/jdresource/jd_fruit.js
-                  SYNCURL: https://github.com/srwgin/test/raw/main/jd_fruit_task.js
+                  SYNCURL: https://github.com/srwgin/test/raw/main/jd_fruit.js
                   IGNORE_COOKIE_JDNC: ${{ github.event.client_payload.IGNORE_COOKIE_JDNC || secrets.IGNORE_COOKIE_JDNC }} #京东农场禁用某些cookie的执行,因为通知太烦了呀,比如要禁用第2和第四个的执行,则填入[2,4]即可,包含中括号哦
